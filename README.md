@@ -1,6 +1,6 @@
 #O software deve identificar as sequências de números consecutivos em uma entrada numérica  
 
-Para resolver esse desafio eu escolhi a linguagem javascript com auxilio do HTML5 para estruturação da entrada e saída de dados através de um browser. Além disso, utilizei CSS3 para estilização da aplicação.
+##Para resolver esse desafio eu escolhi a linguagem javascript com auxilio do HTML5 para estruturação da entrada e saída de dados através de um browser. Além disso, utilizei CSS3 para estilização da aplicação.
 
 PARA EXECUTAR BASTA:
 
