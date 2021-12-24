@@ -1,0 +1,17 @@
+
+.main .container .app-container .enviar{
+    width: 285px;
+    /* margin-bottom: 10px; */
+    background-color: #6f6ef6;
+    border: none;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0 0 10px 0;
+    color: #f7f7ff;
+    transition: all;
+}
+.main .container .app-container .enviar:hover{
+    border: 1px solid #242424;
+    transition-duration: 0.2s;
+}

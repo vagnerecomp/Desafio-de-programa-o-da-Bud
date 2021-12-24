@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bud Challenge</title>
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <img src="./assets/bud_logo.svg" alt="Logotipo Bud">
+            <div class="app-container">
+                <label for="number-input">Digite o número aqui:</label>
+                <input id="number-input" type="number">
+                <button class="enviar">Enviar</button>
+                <p>Resultado:<p class="maior-consecutivo"></p></p>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Armazenando elementos da DOM em objetos para manipulá-los
+        const numberInput = document.querySelector("#number-input")
+        const enviar = document.querySelector(".enviar")
+        const result = document.querySelector('.maior-consecutivo')
+
+        // métodos:
+
+        // Recebe uma string, separa cada caracter em uma posição de um array e retorna esse array
+        const breakStringInCharacter = (numberInputed) => {
+            const arrNumberAux = numberInput.value.split('') //converte string em array
+            const arrNumber =[]
+            arrNumberAux.forEach((value, index) => {
+                arrNumber[index] = parseInt(value)
+            });
+            return arrNumber //retorna um  array de inteiros
+        }
+
+        // verifica ocorrencia de consecutivos e armazena numeros consecutivos em array
+         const findAllConsecutivesNumbers = (arrNumber) =>{
+            const allConsecutivesNumbers = []
+            arrNumber.forEach((current, index)=>{
+                if (((current -1) === arrNumber[index-1]) || ((current + 1) === arrNumber[index + 1])){
+                    allConsecutivesNumbers.push(current)
+                }else{
+                    allConsecutivesNumbers.push('-')
+                }
+            })
+            return allConsecutivesNumbers
+         } 
+
+        // Converte a entrada em number e retorna esse valor para ser processado 
+        const convertInNumber = (numberInputed) => {
+            return parseInt(numberInputed.value)
+        }
+
+        enviar.addEventListener("click", function(e){
+            e.preventDefault()
+            result.innerHTML = findAllConsecutivesNumbers(breakStringInCharacter(numberInput))
+
+        })
+
+    </script>
+</body>
+</html>
